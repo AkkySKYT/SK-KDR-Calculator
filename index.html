@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDR Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Baloo 2', sans-serif;
+            text-align: center;
+            margin: 50px;
+            font-size: 48px; /* Doubled from 24px */
+            background-image: conic-gradient(#FFE220 0deg 90deg, #F6AA2A 90deg 180deg, #FFE220 180deg 270deg, #F6AA2A 270deg 360deg);
+            background-size: 200px 200px;
+        }
+        input { 
+            margin: 10px; 
+            padding: 12px; 
+            font-size: 40px; /* Doubled from 20px */
+        }
+        button { 
+            padding: 15px; 
+            font-size: 40px; /* Doubled from 20px */
+            font-family: 'Baloo 2', sans-serif; 
+        }
+        #result { 
+            margin-top: 30px; 
+            font-size: 48px; /* Doubled from 24px */
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-size: 72px;">KDR Calculator</h1> <!-- Doubled from 36px -->
+    <label for="kills">Kill count:</label>
+    <input type="number" id="kills" min="0">
+    <br>
+    <label for="deaths">Death count:</label>
+    <input type="number" id="deaths" min="0">
+    <br>
+    <label for="games">Game count:</label>
+    <input type="number" id="games" min="1">
+    <br>
+    <button onclick="calculateKDR()">Calculate!</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateKDR() {
+            let kills = parseFloat(document.getElementById('kills').value) || 0;
+            let deaths = parseFloat(document.getElementById('deaths').value) || 0;
+            let games = parseFloat(document.getElementById('games').value) || 1;
+
+            let kdr = deaths === 0 ? kills : (kills / deaths).toFixed(5);
+            let avgKillsPerGame = (kills / games).toFixed(2);
+
+            document.getElementById('result').innerText = `KDR: ${kdr}\nAverage Kills per Game: ${avgKillsPerGame}`;
+        }
+    </script>
+</body>
+</html>
