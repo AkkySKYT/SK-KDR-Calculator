@@ -5,34 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KDR Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&display=swap" rel="stylesheet">
-    <link rel="icon" href="無題-2025-04-02-13-35-11.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Baloo 2', sans-serif;
             text-align: center;
             margin: 50px;
-            font-size: 48px; /* Doubled from 24px */
+            font-size: 48px;
             background-image: conic-gradient(#FFE220 0deg 90deg, #F6AA2A 90deg 180deg, #FFE220 180deg 270deg, #F6AA2A 270deg 360deg);
             background-size: 200px 200px;
         }
         input { 
             margin: 10px; 
             padding: 12px; 
-            font-size: 40px; /* Doubled from 20px */
+            font-size: 40px; 
         }
         button { 
             padding: 15px; 
-            font-size: 40px; /* Doubled from 20px */
+            font-size: 40px; 
             font-family: 'Baloo 2', sans-serif; 
         }
         #result { 
             margin-top: 30px; 
-            font-size: 48px; /* Doubled from 24px */
+            font-size: 48px; 
+        }
+        /* Made by AkkySKYTのスタイル */
+        #credit {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #credit:hover {
+            color: #007bff;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1 style="font-size: 72px;">KDR Calculator</h1> <!-- Doubled from 36px -->
+    <h1 style="font-size: 72px;">KDR Calculator</h1>
     <label for="kills">Kill count:</label>
     <input type="number" id="kills" min="0">
     <br>
@@ -44,6 +61,11 @@
     <br>
     <button onclick="calculateKDR()">Calculate!</button>
     <p id="result"></p>
+
+    <!-- Made by AkkySKYTリンク -->
+    <div id="credit" onclick="window.location.href='https://github.com/AkkySKYT';">
+        Made by AkkySKYT
+    </div>
 
     <script>
         function calculateKDR() {
